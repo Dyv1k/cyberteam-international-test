@@ -1,12 +1,12 @@
 // import { faker } from '@faker-js/faker';
 
-enum Color {
+export enum Color {
     RED,
     GREEN,
     BLUE
 }
 
-interface User {
+export interface User {
     color: Color;
     name: string;
     speed: number;
@@ -40,7 +40,7 @@ interface User {
 export const dataUsers: User[] = [
     {
         "color": 0,
-        "name": "Becky Corwin",
+        "name": "Becky Corwin Becky Corwin Becky Corwin",
         "speed": 69,
         "time": 1025
     },

@@ -1,0 +1,98 @@
+
+
+.rating{
+    display: block;
+    margin: 0;
+    padding: 0px;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    &_loading{
+        &::after{
+            content: "";
+            display: block;
+            width: 100px;
+            height: 100px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            background: url("../../../public/loader.svg") center center/cover no-repeat;
+            z-index: 100;
+            animation: loader 1s infinite;
+        }
+        &::before{
+            content: "";
+            display: block;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: white;
+            opacity: 0.9;
+            filter: blur(1px);
+            z-index: 99;
+        }
+    }
+    
+    &-item{
+        display: flex;
+        position: relative;
+        width: calc(100% - 10px);
+        align-items: center;
+        overflow: hidden;
+        cursor: pointer;
+        padding: 5px;
+        &_active{
+            padding: 4px;
+            border: 1px solid purple;
+        }
+        &__index{
+            font-size: 14px;
+            font-weight: 600;
+            width: fit-content;
+            position: absolute;
+            left: 10px;
+        }
+        svg{
+            overflow: visible;
+            display: block;
+            margin-left: 35px;
+        }
+        &__info{
+            margin-left: 10px;
+            &__title{
+                display: block;
+                font-size: 14px;
+                font-weight: 600;
+                margin: 0;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: calc(100vw - 10px - 66px - 10px - 35px);
+            }
+            &__stats{
+                margin: 0;
+                margin-top: 5px;
+                font-size: 10px;
+                font-weight: 600;
+                color: rgb(125 177 234);
+                span{
+                    &:first-child{
+                        color: rgb(158 153 236);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes loader {
+    0%{
+        transform: translateX(-50%) translateY(-50%) rotate(0deg);
+    }
+    100%{
+        transform: translateX(-50%) translateY(-50%) rotate(360deg);
+    }
+}
